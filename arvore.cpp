@@ -6,7 +6,7 @@
 using namespace std;
 
 
-
+/*
 
 struct BSTno * criaNo(string ID, string nome, string idade, string genero_favorito, string filme_favorito, string guilty_pleasure) {
         struct BSTno *novono;
@@ -117,7 +117,6 @@ void inorderTraversal(struct BSTno *myNode) {
                 if (atual == NULL)
                         return;
         }
-        /* deleting leaf node */
         if (atual->dir == NULL) {
                 if (atual == raiz && atual->esq == NULL) {
                         free(atual);
@@ -132,7 +131,6 @@ void inorderTraversal(struct BSTno *myNode) {
                 flag > 0 ? (pai->esq = atual->esq) :
                                 (pai->dir = atual->esq);
         } else {
-                /* delete node with single child */
                 temp = atual->dir;
                 if (!temp->esq) {
                         temp->esq = atual->esq;
@@ -144,7 +142,6 @@ void inorderTraversal(struct BSTno *myNode) {
                         flag > 0 ? (pai->esq = temp) :
                                         (pai->dir = temp);
                 } else {
-                        /* delete node with two children */
                         struct BSTno *successor = NULL;
                         while (1) {
                                 successor = temp->esq;
@@ -167,3 +164,4 @@ void inorderTraversal(struct BSTno *myNode) {
         free (atual);
         return;
   }
+*/

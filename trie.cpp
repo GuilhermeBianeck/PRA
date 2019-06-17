@@ -1,21 +1,25 @@
 #include <bits/stdc++.h>
-#include "arvore.cpp"
-#include "arquivo.cpp"
+//#include "arvore.cpp"
+//#include "arquivo.cpp"
+#include "dicion.h"
 
-#define ALPHABET_SIZE = 26
+#define ALPHABET_SIZE 26
 
-struct trie tree;
+#define false 0
+#define true 1
 
-typedef struct {
+struct BSTno {
         char *nome;
         struct BSTno *filho[ALPHABET_SIZE*2];
 
-}BSTno;
+};
 
-typedef struct {
-    struct BSTno *raiz;
+struct trie {
+    struct BSTno raiz;
 
-}trie;
+};
+
+struct trie tree;
 
 int letra_int(char letra)
 {
@@ -62,8 +66,8 @@ int trie_insere(struct BSTno *node, const char *nome, char *desc)
 
         if (!node)
         {
-            node = malloc(sizeof(struct BSTno));
-            pai->filho[letter] = node;
+           struct BSTno* node =(struct BSTno*) malloc(sizeof(struct BSTno));
+            pai->filho[letra] = node;
         }
     }
 
@@ -71,7 +75,7 @@ int trie_insere(struct BSTno *node, const char *nome, char *desc)
     * Alocamento de memória da descrição
     */
     int len = strlen(desc);
-    node->value = malloc(len + 1);
+    //node->nome = malloc(len + 1);Não precisa em C++?
     strncpy(node->nome, desc, len);
     return true;
 }
@@ -143,7 +147,7 @@ int dicio_ver(const char *nome, char *signif)
     for (i = 0; i < strlen(nome); i++)
     {
         int letra = letra_int(nome[i]);
-        if (letter == -1)
+        if (letra == -1)
         {
             printf("Letra invalida\n");
             p_invalida(nome, i);

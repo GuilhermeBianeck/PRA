@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
-#include "arvore.cpp"
-#include "trie.cpp"
-#include "dicion.h"
+//#include "arvore.cpp"
+//#include "trie.cpp"
+//#include "dicion.h"
 
 
 #define MAX 10000
@@ -48,8 +48,8 @@ void gerar_arquivo(){
 }
 
 
-void alimenta_arvore_completa(/*arvore*/){
-
+///*void alimenta_arvore_completa(/*arvore*//*){
+/*
     fstream file;
     file.open("bank.dat", ios::in | ios::binary);// abrir arquivo para leitura
 
@@ -103,10 +103,11 @@ void alimenta_arvore_completa(/*arvore*/){
     cout << x;
     file.close();
     return;
-}
-
-void alimenta_arvore(/*arvore,*/int id){
-    fstream file;
+//}
+//
+//void alimenta_arvore(arvore,int id){
+//    fstream file;
+//
     file.open("bank.dat", ios::in | ios::binary);// abrir arquivo para leitura
 
     char x;
@@ -171,7 +172,7 @@ void alimenta_arvore(/*arvore,*/int id){
         }
     }
 }
-
+*/
 
 
 // essa função não funciona, pelo menos tentamos :'(

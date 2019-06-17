@@ -25,9 +25,9 @@ int main(void){
 
         cout << "***********************************************************"<<endl;        
         cout << "*  1 - Gerar arquivo                                      *"<<endl;
-        cout << "*  2 - Alimentar árvore completa                          *"<<endl;
+        cout << "*  2 - Alimentar Ã¡rvore completa                          *"<<endl;
         cout << "*  3 - Alimentar arvore com id                            *"<<endl;
-        cout << "*  4 - Alimentar arvore com 10 ids aleatórios             *"<<endl;
+        cout << "*  4 - Alimentar arvore com 10 ids aleatÃ³rios             *"<<endl;
         cout << "************************************************************\n\n"<<endl;
         cin >> escolha;
         int id;
@@ -41,7 +41,7 @@ int main(void){
             //alimenta_arvore_completa();
 
             //Trecho Alterado
-            for (i = 1; i < argc; i++)
+            for (int i = 1; i < argc; i++)
                 {
                     dicio_arq(argv[i]);
                 }
@@ -53,8 +53,8 @@ int main(void){
         	c=id+'0';
             cout << "ID:";
             cin >> id;
-            alimenta_arvore(id);
-            procuraNome(&c);
+            //alimenta_arvore(id);
+           // procuraNome(&c);
 
             break;
 
@@ -65,8 +65,8 @@ int main(void){
             
                 rando = rand()%MAX;
                 c=rando+'0';
-                alimenta_arvore(rando);
-                procuraNome(&c);
+              //  alimenta_arvore(rando);
+              //  procuraNome(&c);
             break;
         }
     }
