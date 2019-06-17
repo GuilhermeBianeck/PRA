@@ -9,8 +9,8 @@
 #define true 1
 
 struct BSTno {
-        char *nome;
-        struct BSTno *filho[ALPHABET_SIZE*2];
+        char *id;
+        struct BSTno *filho[ALPHABET_SIZE*2]; //Filho é a continução do ID ou a Descrição?
 
 };
 
@@ -34,9 +34,9 @@ int letra_int(char letra)
     return -1;
 }
 
-void p_invalida(const char *nome, int index)
+void p_invalida(const char *id, int index)
 {
-    printf("  nome: \"%s\"\n", nome);
+    printf("  id: \"%s\"\n", id);
     printf("         ");
     int i;
     for (i = 0; i < index; i++)
@@ -46,17 +46,17 @@ void p_invalida(const char *nome, int index)
     printf("^\n");
 }
 
-int trie_insere(struct BSTno *node, const char *nome, char *desc)
+int trie_insere(struct BSTno *node, const char *id, char *desc)
 {
     int i;
-    for (i = 0; i < strlen(nome); i++)
+    for (i = 0; i < strlen(id); i++)
     {
-        int letra = letra_int(nome[i]);
+        int letra = letra_int(id[i]);
         if (letra == -1)
         {
             // Carateres inválidos corrompem a arvore.
-            printf("Falha na nome\n");
-            p_invalida(nome, i);
+            printf("Falha na id\n");
+            p_invalida(id, i);
             printf("  Descrição: \"%s\"\n", desc);
             return false;
         }
@@ -75,18 +75,18 @@ int trie_insere(struct BSTno *node, const char *nome, char *desc)
     * Alocamento de memória da descrição
     */
     int len = strlen(desc);
-    //node->nome = malloc(len + 1);Não precisa em C++?
-    strncpy(node->nome, desc, len);
+    //node->id = malloc(len + 1);Não precisa em C++?
+    strncpy(node->id, desc, len);
     return true;
 }
 
-//Passa pela Trie desde o nó raiz e procura individualmente pelas letras que compõem o nome
-char *trie_get(struct BSTno *node, const char *nome)
+//Passa pela Trie desde o nó raiz e procura individualmente pelas letras que compõem o id
+char *trie_get(struct BSTno *node, const char *id)
 {
     int i;
-    for (i = 0; i < strlen(nome); i++)
+    for (i = 0; i < strlen(id); i++)
     {
-        int letra = letra_int(nome[i]);
+        int letra = letra_int(id[i]);
         if (letra == -1)
         {
             return false;
@@ -98,7 +98,7 @@ char *trie_get(struct BSTno *node, const char *nome)
             return false; // Não tem
         }
     }
-    return node->nome;
+    return node->id;
 }
 
 void dicio_inic()
@@ -117,14 +117,14 @@ int dicio_arq(const char * filename)
         return false;
     }
 
-    char nome[MAX_WORD_SIZE];
+    char id[MAX_WORD_SIZE];
     char desc[MAX_DESC_SIZE];
 
     int count = 0;
 
-    while (fscanf(file, "%s %[^\n]", nome, desc) > 1)
+    while (fscanf(file, "%s %[^\n]", id, desc) > 1)
     {
-        if (!trie_insere(&tree.raiz, nome, desc))
+        if (!trie_insere(&tree.raiz, id, desc))
         {
             fclose(file);
             return false;
@@ -140,23 +140,23 @@ int dicio_arq(const char * filename)
     return true;
 }
 
-int dicio_ver(const char *nome, char *signif)
+int dicio_ver(const char *id, char *signif)
 {
     // Verificar Letras invalidas
     int i;
-    for (i = 0; i < strlen(nome); i++)
+    for (i = 0; i < strlen(id); i++)
     {
-        int letra = letra_int(nome[i]);
+        int letra = letra_int(id[i]);
         if (letra == -1)
         {
             printf("Letra invalida\n");
-            p_invalida(nome, i);
+            p_invalida(id, i);
             return false;
         }
     }
 
     // Pega as descrições da Arvore
-    char *desc = trie_get(&tree.raiz, nome);
+    char *desc = trie_get(&tree.raiz, id);
 
     if (!desc)
     {

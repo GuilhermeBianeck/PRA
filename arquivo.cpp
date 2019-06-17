@@ -26,18 +26,19 @@ void gerar_arquivo(){
 
     file.write("\n",1);
     for(int x=0; x < MAX ; x++){
+        men += "  Nome ";
         men = nomes[rand() % nomes.size()];
-        men += "  Idade  ";
+        men += "  Idade ";
         men += idade[rand() % 10];
-        men += "  Genero Favorito  ";
+        men += "  Genero Favorito ";
         men += genero_favorito[rand() % 2];
-        men += "  Filme Favorito  ";
+        men += "  Filme Favorito ";
         men += filme_favorito[rand() % 2];
-        men += "  Guilty Pleasure  ";
+        men += "  Guilty Pleasure ";
         men += guilty_pleasure[rand() % 2];
         men += "\n";
-        //file.write(to_string(x).c_str(), to_string(x).size() );  //Todas as categorias serão lidas como uma única descrição, inclusive as categorias.
-        //file.write(":",1);
+        file.write(to_string(x).c_str(), to_string(x).size() );  //Todas as categorias serão lidas como uma única descrição, inclusive as categorias.
+        file.write(" ",1);
         file.write(men.c_str(),men.size());//escreve men no arquivo
         cout << (x*100)/MAX << "% COMPLETO" << endl;
         cout.flush();

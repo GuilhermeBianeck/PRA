@@ -8,6 +8,6 @@ void dicio_inic();
 
 int dicio_arq(const char * filename);
 
-int dicio_ver(const char * nome, char * signif);
+int dicio_ver(const char * id, char * signif);
 
 #endif
