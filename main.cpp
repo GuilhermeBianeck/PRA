@@ -8,15 +8,19 @@
 
 using namespace std;
 
-int main(void){
+int main(int argc, char ** argv){
 
     int escolha;
     char c;
+    int dez=10;
+    int rando=0;
 
     //Trecho Alterado ....
     char palavra[MAX_WORD_SIZE+1];
     char resposta[MAX_DESC_SIZE+1];
     dicio_inic();
+
+    
 
 
 
@@ -31,7 +35,7 @@ int main(void){
         cout << "*  5 - Buscar ID                                           *"<<endl;
         cout << "************************************************************  \n\n"<<endl;
         cin >> escolha;
-        int id;
+        char *id;
         switch (escolha){
 
         case 1:
@@ -49,21 +53,19 @@ int main(void){
             break;
 
         case 3:
-        	c=id+'0';
-            cout << "ID:";
-            cin >> id;
+        	//c=id+'0';
+          //  cout << "ID:";
+          // cin >> id;
 
             break;
 
         case 4:
-            int dez=10;
-            int rando=0;
+
             while(dez--) {
                 rando = rand()%MAX;
                 c=rando+'0';
             }
             break;
-        }
         case 5:
             printf("ID: \n");
             scanf("%s",id);
@@ -78,6 +80,7 @@ int main(void){
             }
 
             break;
+        }
             
     }
 
