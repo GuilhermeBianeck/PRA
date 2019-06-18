@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-//#include "trie.cpp"
+#include "trie.cpp"
 //#include "dicion.h"
 
 

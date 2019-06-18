@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #include "arquivo.cpp"
-#include "dicion.h"
-#include "trie.cpp"
+//#include "dicion.h"
+//#include "trie.cpp"
 
 
 //g++ -std=c++0x  "filename.cpp"

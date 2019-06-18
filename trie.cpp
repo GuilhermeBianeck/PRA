@@ -2,10 +2,15 @@
 //#include "arquivo.cpp"
 #include "dicion.h"
 
+using namespace std;
+
+
 #define ALPHABET_SIZE 26
 
 #define false 0
 #define true 1
+
+
 
 struct BSTno {
         char *id;
