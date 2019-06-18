@@ -25,16 +25,16 @@ void gerar_arquivo(){
 
     file.write("\n",1);
     for(int x=0; x < MAX ; x++){
-        men += "  Nome ";
-        men = nomes[rand() % nomes.size()];
+men += "  Nome ";
+        men = nomes[rand() % (sizeof(nomes)/sizeof(*nomes))];
         men += "  Idade ";
-        men += idade[rand() % 10];
+        men += idade[rand() %  (sizeof(idade)/sizeof(*idade))];
         men += "  Genero Favorito ";
-        men += genero_favorito[rand() % 2];
+        men += genero_favorito[rand() % (sizeof(genero_favorito)/sizeof(*genero_favorito))];
         men += "  Filme Favorito ";
-        men += filme_favorito[rand() % 2];
+        men += filme_favorito[rand() %  (sizeof(filme_favorito)/sizeof(*filme_favorito)) ];
         men += "  Guilty Pleasure ";
-        men += guilty_pleasure[rand() % 2];
+        men += guilty_pleasure[rand() %  (sizeof(guilty_pleasure)/sizeof(*guilty_pleasure))];
         men += "\n";
         file.write(to_string(x).c_str(), to_string(x).size() );  //Todas as categorias serão lidas como uma única descrição, inclusive as categorias.
         file.write(" ",1);
