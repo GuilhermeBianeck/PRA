@@ -9,7 +9,7 @@
 
 struct BSTno {
         char *id;
-        struct BSTno *filho[ALPHABET_SIZE*2]; //Filho é a continução do ID ou a Descrição?
+        struct BSTno *filho[ALPHABET_SIZE*2]; 
 
 };
 
