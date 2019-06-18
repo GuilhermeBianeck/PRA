@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-//#include "arvore.cpp"
 //#include "arquivo.cpp"
 #include "dicion.h"
 

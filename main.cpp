@@ -39,8 +39,6 @@ int main(void){
             break;
 
         case 2:
-            //alimenta_arvore_completa();
-
             //Trecho Alterado
             for (int i = 1; i < argc; i++)
                 {
@@ -54,8 +52,6 @@ int main(void){
         	c=id+'0';
             cout << "ID:";
             cin >> id;
-            //alimenta_arvore(id);
-           // procuraNome(&c);
 
             break;
 
@@ -65,8 +61,6 @@ int main(void){
             while(dez--) {
                 rando = rand()%MAX;
                 c=rando+'0';
-              //  alimenta_arvore(rando);
-              //  procuraNome(&c);
             }
             break;
         }
